@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Système de collecte de déchets</title>
+        <link rel="stylesheet" href="assets/css/style1.css">
+    </head>
+    <body>
+        <h1>Enregistrez vous pour se débarasser de vos déchets facilement 😊</h1>
+        <form onsubmit="event.preventDefault(); onFormSubmit()">
+            <label for="nom">Nom complet<label class="validation-error hide"  id="nomValidationError" >This Field is required</label> </label>
+                                <input type="text" name="nom" id="nom"> <br>
+            <label for="rue">Numéro de rue<label class="validation-error hide"  id="rueValidationError" >This Field is required</label> </label>
+                                <input type="text" name="rue" id="rue"><br>
+            <label for="porte">Numéro de porte<label class="validation-error hide"  id="porteValidationError" >This Field is required</label> </label>
+                                <input type="text" name="porte" id="porte"><br>
+            <label for="carte">Numéro National d'Identité (NNI)<label class="validation-error hide"  id="carteValidationError" >This Field is required</label> </label>
+                                <input type="text" name="carte" id="carte"><br>
+            <input class="form-action-buttons submit" type="submit" value="Submit">
+        </form>
+    <script src="assets/js/java1.js"></script>
+    </body>
+</html>

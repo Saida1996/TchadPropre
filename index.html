@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de collecte de déchets</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+       <h1 class="anime">Enregistrez vous pour se débarasser de vos déchets facilement 😊</h1>
+       
+            <table>
+                <tr>
+                    <td>
+                        <form onsubmit="event.preventDefault(); onFormSubmit()">
+                            <div>
+                                <label for="nom">Nom complet<label class="validation-error hide"  id="nomValidationError" >This Field is required</label> </label>
+                                <input type="text" name="nom" id="nom">
+                            </div>                  
+                            <div>
+                                <label for="rue">Numéro de rue<label class="validation-error hide"  id="rueValidationError" >This Field is required</label> </label>
+                                <input type="text" name="rue" id="rue">
+                            </div>
+                            <div>
+                                <label for="porte">Numéro de porte<label class="validation-error hide"  id="porteValidationError" >This Field is required</label> </label>
+                                <input type="text" name="porte" id="porte">
+                            </div>
+                            <div>
+                                <label for="carte">Numéro National d'Identité (NNI)<label class="validation-error hide"  id="carteValidationError" >This Field is required</label> </label>
+                                <input type="text" name="carte" id="carte">
+                            </div>
+                            <div>
+                                <input class="form-action-buttons submit" type="submit" value="Submit">
+                            </div>
+                            
+                        </form>
+                    </td>
+                    <td>
+                        <table class="list" id="emplist">
+                            <thead>
+                                <tr>
+                                    <td class="thead">Nom complet</td>
+                                    <td class="thead">Numéro de rue</td>
+                                    <td class="thead">Numéro de porte</td>
+                                    <td class="thead">Votre Numéro National d'identité</td>
+                                    <td class="thead">Actions</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+        
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+       <div class="im"><img src="img.jfif"> <img src="oip.jfif" class="imgg"></div> 
+
+    
+<script src="assets/js/script.js"></script>
+</body>
+</html>
