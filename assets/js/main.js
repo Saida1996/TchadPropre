@@ -8,28 +8,28 @@
 			document.getElementById('model').classList.remove('active')
 		}
 
-		const getLocalStorage = ()=> JSON.parse(localStorage.getItem('db_student'))??[]
-		const setLocalStorage = (db_student)=> localStorage.setItem('db_student', JSON.stringify(db_student))
+		const getLocalStorage = ()=> JSON.parse(localStorage.getItem('db_client'))??[]
+		const setLocalStorage = (db_client)=> localStorage.setItem('db_client', JSON.stringify(db_client))
 
-		const readStudent = ()=> getLocalStorage()
+		const readClient = ()=> getLocalStorage()
 
-		const createStudent = (student)=> {
-			const db_student = getLocalStorage()
-			db_student.push(student)
-			setLocalStorage(db_student)
+		const createClients = (client)=> {
+			const db_client = getLocalStorage()
+			db_client.push(client)
+			setLocalStorage(db_client)
 		} 
 
-		const updateStudent = (index, student)=> {
-			const db_student = readStudent()
-			db_student[index] = student
-			setLocalStorage(db_student)
+		const updateClientt = (index, client)=> {
+			const db_client = readClient()
+			db_client[index] = client
+			setLocalStorage(db_client)
 		}
 
 
-		const deleteStudent = (index)=> {
-			const db_student = readStudent()
-			db_student.splice(index, 1)
-			setLocalStorage(db_student)
+		const deleteClient = (index)=> {
+			const db_client = readClient()
+			db_client.splice(index, 1)
+			setLocalStorage(db_client)
 		}
 
 		const isValidFields = ()=> {
@@ -41,69 +41,69 @@
 			fields.forEach(field => field.value = "")
 		} 
 
-		const saveStudent = ()=>{
+		const saveClient = ()=>{
 			if(isValidFields()){
-				const student = {
-					name: document.getElementById('name').value,
-					email: document.getElementById('email').value,
-					phone: document.getElementById('phone').value,
-					fees: document.getElementById('fees').value,
+				const client = {
+					nom: document.getElementById('nom').value,
+					numeroRue: document.getElementById('numeroRue').value,
+					numeroPorte: document.getElementById('numeroPorte').value,
+					NNI: document.getElementById('NNI').value,
 				}
 				//console.log('The Cadastral student: ' + student)
-				const index = document.getElementById('name').dataset.index
+				const index = document.getElementById('nom').dataset.index
 				if(index == 'new'){
-					createStudent(student)
-					listStudent()
+					createClients(client)
+					listClient()
 					closeModel()
 				}else{
-					updateStudent(index, student)
-					listStudent()
+					updateClientt(index, client)
+					listClient()
 					closeModel()
 				}
 			}
 		}
 
 
-		const createRow = (student, index)=> {
+		const createRow = (client, index)=> {
 			const newRow = document.createElement('tr')
 			newRow.innerHTML = `
-				<td>${student.name}</td>
-				<td>${student.email}</td>
-				<td>${student.phone}</td>
-				<td>${student.fees}</td>
+				<td>${client.nom}</td>
+				<td>${client.numeroRue}</td>
+				<td>${client.numeroPorte}</td>
+				<td>${client.NNI}</td>
 				<td>
 					<button type="button" class="button green" id="edit-${index}">Edit</button>
 					<button type="button" class="button red" id="delete-${index}">Delete</button>
 				</td>
 			`
-			document.querySelector('#tblStudent>tbody').appendChild(newRow)
+			document.querySelector('#tblClient>tbody').appendChild(newRow)
 		}
 
 		const crearTable = ()=> {
-			const rows = document.querySelectorAll('#tblStudent>tbody tr')
+			const rows = document.querySelectorAll('#tblClient>tbody tr')
 			rows.forEach(row => row.parentNode.removeChild(row))
 		}
 
-		const listStudent = ()=> {
-			const students =  readStudent()
+		const listClient = ()=> {
+			const clients =  readClient()
 			// console.log(students)
 			crearTable()
-			students.forEach(createRow)
+			clients.forEach(createRow)
 		}
 
-		const fillFields = (student)=> {
-			document.getElementById('name').value = student.name
-			document.getElementById('email').value = student.email
-			document.getElementById('phone').value = student.phone
-			document.getElementById('fees').value = student.fees
+		const fillFields = (client)=> {
+			document.getElementById('nom').value = client.nom
+			document.getElementById('numeroRue').value = client.numeroRue
+			document.getElementById('numeroPorte').value = client.numeroPorte
+			document.getElementById('NNI').value = client.NNI
 
-			document.getElementById('name').dataset.index = student.index
+			document.getElementById('nom').dataset.index = client.index
 		}
 
-		const editStudent = (index)=>{
-			const student = readStudent()[index]
-			student.index = index
-			fillFields(student)
+		const editClient = (index)=>{
+			const client = readClient()[index]
+			client.index = index
+			fillFields(client)
 			openModel()
 		}
 
@@ -111,22 +111,22 @@
 			if(event.target.type == 'button'){
 				const [action, index] = event.target.id.split('-')
 				if(action == 'edit'){
-					editStudent(index)
+					editClient(index)
 				}else{
-					const student = readStudent()[index]
-					const response = confirm(`êtes-vous sûr de vouloir supprimer l'utilisateur ${student.name}`)
+					const client = readClient()[index]
+					const response = confirm(`êtes-vous sûr de vouloir supprimer le client ${client.nom} ?`)
 					if(response){
-						deleteStudent(index)
-						listStudent()
+						deleteClient(index)
+						listClient()
 					}
 				}
 			}
 		}
 
-		listStudent()
+		listClient()
 
-		document.getElementById('idStudent').addEventListener('click', openModel)
+		document.getElementById('idClient').addEventListener('click', openModel)
 		document.getElementById('modelClose').addEventListener('click', closeModel)
 		document.getElementById('cancel').addEventListener('click', closeModel)
-		document.getElementById('save').addEventListener('click', saveStudent)
-		document.querySelector('#tblStudent>tbody').addEventListener('click', editDelete)
+		document.getElementById('save').addEventListener('click', saveClient)
+		document.querySelector('#tblClient>tbody').addEventListener('click', editDelete)

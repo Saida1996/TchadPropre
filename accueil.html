@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="assets/css/main.css">
+			<link rel="stylesheet" href="assets/css/button.css">
+			<link rel="stylesheet" href="assets/css/records.css">
+			<link rel="stylesheet" href="assets/css/model.css">
+			<link rel="stylesheet" href="assets/css/nav.css">
+			<script src="assets/js/main.js" defer></script>
+			<title>Gestion des déchets</title>
+		</head>
+		<body>
+			<nav>
+				<!--  <div class="logo">Hltic Corp</div> -->
+				 <div class="logo"><img   src="img.jfif" style="width: 100px; height: 40px; margin-top: 14px;"  alt="Hltic Corp"></div>
+				 <label for="btn" class="icon">
+					 <span class="fa fa-bars"></span>
+				 </label>
+				 <input type="checkbox" id="btn">
+				 <ul>
+					 <li><a href="index.html">Home</a></li>
+					 <li>
+						 <label for="btn-1" class="show">Features + </label>
+						 <a href="">Features</a>
+						 <input type="checkbox" id="btn-1">
+					 <ul>
+						 <li><a href="">Pages</a></li>
+						 <li><a href="">Elements</a></li>
+						 <li><a href="">Icons</a></li>
+					 </ul>
+					 </li>
+					 <li>
+						 <label for="btn-2" class="show">Services + </label>
+						 <a href="">Services</a>
+						 <input type="checkbox" id="btn-2">
+						 <ul>
+							 <li><a href="">Dev Web</a></li>
+							 <li><a href="">App Design</a></li>
+							 <li>
+								 <label for="btn-3" class="show">More +</label>
+								 <a href="">More 
+								 <span class="fa fa-plus"></span>
+							 </a>
+								 <input type="checkbox" id="btn-3">
+							 
+							 <ul>
+								 <li><a href="">Submenu-1</a></li>
+								 <li><a href="">Submenu-2</a></li>
+								 <li><a href="">Submenu-3</a></li>
+							 </ul>
+							 </li>
+						 </ul>
+					 </li>
+					 <li><a href="">Portofolio</a></li>
+					 <li><a href="">Contact</a></li>
+		
+					 <li><a class="btn" href="index.html" style="margin-top: 14px;"  >login</a></li>
+					 <li><a class="btn" href="creation.html" style="margin-top: 14px;"  >register</a></li>
+				 </ul>
+			 </nav>
+			<header>
+				<h1 class="header-title"><em>Votre proprété, votre satisfaction sont notre priorité😊</em></h1>
+				
+			</header>
+			<main>
+			   <button class="button blue mobile"  id="idClient">Ajoutez un nouveau client</button>
+			   <table id="tblClient" class="records">
+				   <thead>
+					   <tr>
+						   <td><strong>Nom et prénom</strong></td>
+						   <td><strong>Numéro de rue</strong></td>
+						   <td><strong>Numéro de porte</strong></td>
+						   <td><strong>Numéro national d'identité (NNI)</strong></td>
+						   <td><strong>Actions</strong></td>
+					   </tr>
+				   </thead>
+				   <tbody>
+
+				   </tbody>
+			   </table>
+			   <!-- <div class="model active" id="model"> -->
+				<div class="model" id="model">
+				<div class="model-content">
+					<header class="model-header">
+						<h2>Créer un nouveau client</h2>
+						<span class="model-close" id="modelClose">&#10006;</span>
+					</header>
+					<form id="form" class="model-form">
+						<input type="text" class="model-field" id="nom" data-index="new" placeholder="nom et prénom" required>
+						<input type="text" class="model-field" id="numeroRue" placeholder="numéro de rue" required>
+						<input type="text" class="model-field" id="numeroPorte" placeholder="numéro de porte" required>
+						<input type="text" class="model-field" id="NNI" placeholder="numéro national d'identité" required>
+					</form>
+					<footer class="model-footer">
+						<button class="button green" id="save">Save</button>
+						<button class="button blue" id="cancel">Cancel</button>
+					</footer>
+				</div>
+			   </div>
+			</main>
+			<footer>
+			   Copyright &copy; Hltic Corp 2022 <br>
+			   Saïda Mahamat Said<br>
+			   Full Stack junior Developer<br>
+			   tel:+23560110206<br>
+			   saidamahamatseid960@gmail.com<br>
+			</footer>
+		</body>
+		</html>
